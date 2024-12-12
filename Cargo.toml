@@ -1,0 +1,9 @@
+[package]
+name = "txTrait"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+solana-sdk = "2.1.5"
+subxt = { version = "0.38.0", features=["subxt-lightclient"]}
+tokio = "1.42.0"
