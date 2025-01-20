@@ -1,9 +1,29 @@
 [package]
 name = "txTrait"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
 [dependencies]
-solana-sdk = "2.1.5"
-subxt = { version = "0.38.0", features=["subxt-lightclient"]}
+subxt = { version = "0.38.0", features = ["subxt-lightclient"] }
 tokio = "1.42.0"
+
+
+[features]
+alles = ["solana", "subxthelper", "icp"]
+subxthelper = ["subxt"]                  # "subxt-signer", "subxt-macro", "subxt-metadata"
+solana = ["solana-sdk"]
+icp = ["ic-cdk", "ic-cdk-macros"]
+
+
+[dependencies.solana-sdk]
+version = "2.1.5"
+optional = true
+
+
+[dependencies.ic-cdk]
+version = "0.17.1"
+optional = true
+
+[dependencies.ic-cdk-macros]
+ic-cdk-macros = "0.17.1"
+optional = true
