@@ -11,7 +11,7 @@ tokio = "1.42.0"
 [features]
 alles = ["solana", "subxthelper", "icp"]
 subxthelper = ["subxt"]                  # "subxt-signer", "subxt-macro", "subxt-metadata"
-solana = ["solana-sdk"]
+solana = ["solana-sdk", "raydium_amm"]
 icp = ["ic-cdk", "ic-cdk-macros"]
 
 
@@ -19,6 +19,12 @@ icp = ["ic-cdk", "ic-cdk-macros"]
 version = "2.1.5"
 optional = true
 
+
+[dependencies.raydium_amm]
+git = "https://github.com/raydium-io/raydium-amm"
+default-features = false
+rev = "d10a8e9fab9f7a3d87b4ae3891e3e4c24b75c041"
+features = ["client"]
 
 [dependencies.ic-cdk]
 version = "0.17.1"
